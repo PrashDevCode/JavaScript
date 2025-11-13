@@ -1,0 +1,78 @@
+Asynchronous JavaScript – Exactly Kya Hota Hai?
+
+-> JavaScript normally ek hi line mein code execute karta hai (single-threaded language).
+Matlab agar ek line kaam khatam nahi hoti, to next line wait karegi.
+
+Example (Synchronous):
+
+console.log("Start");
+for(let i=0; i<1000000000; i++) {} // heavy task
+console.log("End");
+
+
+Yahan “End” tabhi print hoga jab loop pura khatam ho jaaye — tab tak browser freeze bhi ho sakta hai.
+Ye hota hai blocking behavior.
+
+To Asynchronous kya karta hai?
+
+Asynchronous JavaScript ka kaam hai non-blocking execution karna.
+Matlab agar koi task time-consuming hai (like server se data fetch karna, file read karna, timer lagana), to JS use background mein chhoda deta hai aur baaki code execute karta rehta hai.
+Jab wo task complete ho jaata hai, to JS callback queue se result lekar execute kar deta hai.
+
+Example:
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Data received");
+}, 2000);
+
+console.log("End");
+
+
+Output:
+
+Start
+End
+Data received   (after 2 seconds)
+
+
+Explanation:
+
+setTimeout ek asynchronous function hai.
+
+Ye “background” mein run hota hai.
+
+JavaScript “End” print kar deta hai bina wait kiye.
+
+2 second baad callback queue se result aata hai, tab “Data received” print hota hai.
+
+Kyu Use Karte Hain Asynchronous Code?
+
+Non-blocking execution:
+Page freeze nahi hota, user experience smooth rehta hai.
+
+Fast performance:
+Heavy tasks background mein run hote hain, UI responsive rehti hai.
+
+Real-world tasks handle karne ke liye:
+
+Server/API se data lana (fetch)
+
+File read/write
+
+Timers (setTimeout, setInterval)
+
+Database operations
+
+Better user experience:
+Website “wait” nahi karti — jaise loading animation chalti rehti hai jab tak data nahi aata.
+
+In Short:
+Concept	Meaning
+Synchronous JS	Line-by-line execute hota hai, wait karta hai
+Asynchronous JS	Ek task background mein run hota hai, code continue karta hai
+Why use it?	Taaki slow operations UI ko block na karein
+
+Agar simple line mein bolo to:
+
+“Asynchronous JavaScript ek tareeka hai jisse JS background mein long tasks (jaise API calls) run karke UI ko block hone se bachata hai.”

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM in JS</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+
+    <!-- <h1 id="title" class="heading">DOCUMENT OBJECT MODEL (DOM)</h1>
+    <h1 id="id1">hello DOM</h1>
+    <script>
+        document.getElementById("id1").innerText="Hello DOM Updated";
+        document.getElementById("id1").style.color="blue";
+        document.getElementById("id1").style.backgroundColor="goldenrod";
+        document.getElementById("id1").style.textAlign="center";
+        document.getElementById("id1").style.padding="20px";
+    </script> -->
+
+<script>
+    const parent=document.querySelector('.parent');
+    console.log(parent);
+    console.log(parent.children);
+    console.log(parent.children[1]);
+</script>
+
+</body>
+</html>
